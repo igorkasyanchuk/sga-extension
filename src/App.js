@@ -10,14 +10,14 @@ import StatsPanel from './StatsPanel.js';
 import TrendsPanel from './TrendsPanel.js';
 import PeoplePanel from './PeoplePanel.js';
 import Loading from './Loading.js';
-import PleaseLogin from './PleaseLogin.js';
+import SomethingWentWrong from './SomethingWentWrong.js';
 import Header from './Header.js';
 import RecentDeals from './RecentDeals.js';
 
-import DATA from './data/all.json';
-const SERVER_URL = "http://storyteller.storyteller.com:3000";
+// import DATA from './data/all.json';
+// const SERVER_URL = "http://storyteller.storyteller.com:3000";
 
-//const SERVER_URL = "https://solutions.softserveinc.com";
+const SERVER_URL = "https://solutions.softserveinc.com";
 
 class App extends Component {
 
@@ -34,37 +34,36 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // var self = this;
-    // axios.get('https://solutions.softserveinc.com/account/api/all', { withCredentials: true })
-    //   .then(function (response) {
-    //     console.log(response);
-    //     self.setState({
-    //       loading: false, 
-    //       status: 'finished',
-    //       load: response.data.current_load.toFixed(2).replace(/\.?0*$/g,''),
-    //       current_utilization: response.data.current_utilization,
-    //       future_utilization: response.data.future_utilization,
-    //       load_stats: response.data.load_stats,
-    //       recent_deals: response.data.recent_deals,
-    //       deal_stats: response.data.deal_stats
-    //     });
-    //   })
-    //   .catch(function (error) {
-    //     self.setState({
-    //       loading: false, 
-    //       status: 'error'
-    //     });
-    //   });
-    this.setState({
-      loading: false,
-      status: 'finished',
-      load: DATA.current_load.toFixed(2).replace(/\.?0*$/g,''),
-      future_utilization: DATA.future_utilization,
-      current_utilization: DATA.current_utilization,
-      load_stats: DATA.load_stats,
-      recent_deals: DATA.recent_deals,
-      deal_stats: DATA.deal_stats
-    });
+    var self = this;
+    axios.get('https://solutions.softserveinc.com/account/api/all', { withCredentials: true })
+      .then(function (response) {
+        self.setState({
+          loading: false, 
+          status: 'finished',
+          load: response.data.current_load.toFixed(2).replace(/\.?0*$/g,''),
+          current_utilization: response.data.current_utilization,
+          future_utilization: response.data.future_utilization,
+          load_stats: response.data.load_stats,
+          recent_deals: response.data.recent_deals,
+          deal_stats: response.data.deal_stats
+        });
+      })
+      .catch(function (error) {
+        self.setState({
+          loading: false, 
+          status: 'error'
+        });
+      });
+    // this.setState({
+    //   loading: false,
+    //   status: 'finished',
+    //   load: DATA.current_load.toFixed(2).replace(/\.?0*$/g,''),
+    //   future_utilization: DATA.future_utilization,
+    //   current_utilization: DATA.current_utilization,
+    //   load_stats: DATA.load_stats,
+    //   recent_deals: DATA.recent_deals,
+    //   deal_stats: DATA.deal_stats
+    // });
   }
 
   render() {
@@ -93,7 +92,7 @@ class App extends Component {
       if (this.state.loading) {
         return <Loading />;
       } else {
-        return <PleaseLogin server_url={ SERVER_URL } />;
+        return <SomethingWentWrong />;
       }
     }
   }

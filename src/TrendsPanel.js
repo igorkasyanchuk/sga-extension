@@ -11,11 +11,11 @@ class TrendsPanel extends Component {
       <div>
         <BarChart width={500} height={300} data={this.props.load_stats}>
           <XAxis dataKey="name"/>
-          <YAxis/>
+          <YAxis type="number" domain={[0, 100]}/>
           <CartesianGrid strokeDasharray="4 4"/>
-          <ReferenceLine x={moment().format("MMM YY")} stroke="green" label="Current" />
           <Tooltip formatter={(value, name, payload) => payload['value'] + '%'}/>
           <Bar dataKey="value" fill="#8884d8"/>
+          <ReferenceLine isFront="true" x={moment().format("MMM YY")} stroke="red" />
         </BarChart>
       </div>
     );
