@@ -1,0 +1,47 @@
+.dealStatsContainerPlaceholder {
+
+}
+
+.dealStatsContainer {
+  margin-bottom: 6px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.dealStatsTitle {
+  text-align: center;
+  font-size: 24px;
+  padding: 20px 0;
+  letter-spacing: -1px;  
+}
+
+.dealStatsSeparator {
+  width: 90%;
+  margin: 0 auto;
+  height: 4px;
+  background: black;
+}
+
+.statLabel {
+  text-align: center;
+  font-size: 66px;
+  padding: 30px 0;
+  letter-spacing: -1px;  
+}
+
+.won {
+  width: 50%;
+  color: #15B371;
+}
+
+.lost {
+  width: 50%;
+  color: #F55656;
+}
+
+.statLabel span {
+  display: block;
+  font-size: 18px;
+  color: black;
+}

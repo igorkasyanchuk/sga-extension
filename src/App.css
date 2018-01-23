@@ -1,0 +1,28 @@
+.App {
+  padding: 20px 0px;
+}
+
+.AppHeader {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.appLoading {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.appPleaseLogin {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.appTabsContainer {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.percentage {
+}
+

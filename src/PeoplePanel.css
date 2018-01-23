@@ -1,0 +1,28 @@
+.personItem {
+  margin-bottom: 6px;
+  display: flex;
+  width: 100%;
+}
+
+.personItemAvatar {
+  width: 15%;
+}
+
+.personItemFullName {
+  width: 65%;
+}
+
+.personItemLoad {
+  width: 20%;
+  text-align: right;
+}
+
+.cityInfo {
+  padding: 0;
+  margin: 0;
+}
+
+.technologiesInfo {
+  padding: 0;
+  margin: 0;
+}

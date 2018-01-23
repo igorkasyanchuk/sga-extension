@@ -1,0 +1,42 @@
+{
+  "name": "__MSG_appName__",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "__MSG_appDescription__",
+  "icons": {
+    "16": "images/icon-16.png",
+    "128": "images/icon-128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "background/script.js"
+    ]
+  },
+  "permissions": [
+    "background",
+    "cookies",
+    "*://*.google.com/",
+    "*://*.softserveinc.com/",
+    "*://localhost/",
+    "idle",
+    "management",
+    "notifications",
+    "pageCapture",
+    "tabs",
+    "storage",
+    "webNavigation",
+    "webRequest"
+  ],
+  "browser_action": {
+    "default_icon": {
+      "19": "images/icon-19.png",
+      "38": "images/icon-38.png"
+    },
+    "default_title": "Solutions Assistant",
+    "default_popup": "index.html"
+  },
+  "web_accessible_resources": [
+    "images/icon-48.png"
+  ]
+}
